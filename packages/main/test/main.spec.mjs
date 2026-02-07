@@ -64,7 +64,7 @@ describe('::AssertionChecker()', () => {
 		});
 	});
 
-	it('should throw if bad validate.', () => {
+	it('should throw if bad defaultExpected.', () => {
 		assert.throws(() => AssertionChecker(() => true, null), {
 			name: 'TypeError',
 			message: 'Invalid "args[1] as defaultExpected", one "string" expected.',
@@ -74,7 +74,7 @@ describe('::AssertionChecker()', () => {
 	describe('>assert()', () => {
 		const assertString = AssertionChecker(v => typeof v === 'string', 'string');
 
-		it('shoud get ok.', () => {
+		it('should get ok.', () => {
 			assertString('foo', 'bar');
 		});
 
