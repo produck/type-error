@@ -1,9 +1,11 @@
+import * as Ow from '@produck/ow';
+
 function _ErrorMessage(role, expected) {
 	return `Invalid "${role}", one "${expected}" expected.`;
 }
 
 function _ThrowTypeError(role, expected) {
-	throw new TypeError(ErrorMessage(role, expected));
+	Ow.Error.Type(ErrorMessage(role, expected));
 }
 
 function _AssertionChecker(validate, defaultExpected) {

@@ -23,5 +23,8 @@
 	"scripts": {
 		"test": "node ./test/index.mjs",
 		"test:only": "node --test-only ./test/index.mjs"
+	},
+	"dependencies": {
+		"@produck/ow": "^0.2.1"
 	}
 }
