@@ -1,9 +1,25 @@
 {
 	"name": "@produck/type-error",
 	"version": "0.1.3",
-	"description": "",
+	"description": "A helper utility to throw type errors using the Produck TypeError template",
+	"keywords": [
+		"type-error",
+		"type-checking",
+		"validation",
+		"error-handling",
+		"produck"
+	],
 	"license": "MIT",
 	"author": "ChaosLee",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/produck/type-error.git",
+		"directory": "packages/main"
+	},
+	"bugs": {
+		"url": "https://github.com/produck/type-error/issues"
+	},
+	"homepage": "https://github.com/produck/type-error#readme",
 	"publishConfig": {
 		"access": "public"
 	},
