@@ -25,6 +25,6 @@
 		"test:only": "node --test-only ./test/index.mjs"
 	},
 	"dependencies": {
-		"@produck/ow": "^0.2.1"
+		"@produck/ow": "^0.2.2"
 	}
 }
