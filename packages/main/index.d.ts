@@ -7,7 +7,7 @@
 export type Assert = (
   value: unknown,
   role: string,
-  expected?: string
+  expected?: string,
 ) => undefined;
 
 /**
@@ -24,10 +24,7 @@ export type Validate = (value: unknown) => boolean;
  * @returns Formatted error message string
  * @throws TypeError when role or expected is not a string
  */
-export function ErrorMessage(
-  role: string,
-  expected: string
-): string;
+export function ErrorMessage(role: string, expected: string): string;
 
 /**
  * Throws a TypeError with a formatted message for type validation failures
@@ -35,10 +32,7 @@ export function ErrorMessage(
  * @param expected - Expected type/value description
  * @throws TypeError always throws with formatted message
  */
-export function ThrowTypeError(
-  role: string,
-  expected: string
-): never;
+export function ThrowTypeError(role: string, expected: string): never;
 
 /**
  * Creates an assertion checker function with a custom validation function
@@ -50,5 +44,5 @@ export function ThrowTypeError(
  */
 export function AssertionChecker(
   validate: Validate,
-  defaultExpected: string
+  defaultExpected: string,
 ): Assert;

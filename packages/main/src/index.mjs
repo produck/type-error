@@ -1,60 +1,60 @@
 import * as Ow from '@produck/ow';
 
 function _ErrorMessage(role, expected) {
-	return `Invalid "${role}", one "${expected}" expected.`;
+  return `Invalid "${role}", one "${expected}" expected.`;
 }
 
 function _ThrowTypeError(role, expected) {
-	Ow.Error.Type(ErrorMessage(role, expected));
+  Ow.Error.Type(ErrorMessage(role, expected));
 }
 
 function _AssertionChecker(validate, defaultExpected) {
-	return function assert(value, role, expected = defaultExpected) {
-		if (typeof role !== 'string') {
-			_ThrowTypeError('args[1] as role', 'string');
-		}
+  return function assert(value, role, expected = defaultExpected) {
+    if (typeof role !== 'string') {
+      _ThrowTypeError('args[1] as role', 'string');
+    }
 
-		if (typeof expected !== 'string') {
-			_ThrowTypeError('args[2] as expected', 'string');
-		}
+    if (typeof expected !== 'string') {
+      _ThrowTypeError('args[2] as expected', 'string');
+    }
 
-		const isValid = validate(value);
+    const isValid = validate(value);
 
-		if (typeof isValid !== 'boolean') {
-			_ThrowTypeError('validate()', 'boolean');
-		}
+    if (typeof isValid !== 'boolean') {
+      _ThrowTypeError('validate()', 'boolean');
+    }
 
-		if (!isValid) {
-			_ThrowTypeError(role, expected);
-		}
-	};
+    if (!isValid) {
+      _ThrowTypeError(role, expected);
+    }
+  };
 }
 
-const isString = value => typeof value === 'string';
+const isString = (value) => typeof value === 'string';
 const assertString = _AssertionChecker(isString, 'string');
 
 function assertRoleExpected(role, expected) {
-	assertString(role, 'args[0] as role', 'string');
-	assertString(expected, 'args[1] as expected', 'string');
+  assertString(role, 'args[0] as role', 'string');
+  assertString(expected, 'args[1] as expected', 'string');
 }
 
 export function ErrorMessage(role, expected) {
-	assertRoleExpected(role, expected);
+  assertRoleExpected(role, expected);
 
-	return _ErrorMessage(role, expected);
+  return _ErrorMessage(role, expected);
 }
 
 export function ThrowTypeError(role, expected) {
-	assertRoleExpected(role, expected);
-	_ThrowTypeError(role, expected);
+  assertRoleExpected(role, expected);
+  _ThrowTypeError(role, expected);
 }
 
 export function AssertionChecker(validate, defaultExpected) {
-	if (typeof validate !== 'function') {
-		ThrowTypeError('args[0] as validate', '(value: unknown) => boolean');
-	}
+  if (typeof validate !== 'function') {
+    ThrowTypeError('args[0] as validate', '(value: unknown) => boolean');
+  }
 
-	assertString(defaultExpected, 'args[1] as defaultExpected', 'string');
+  assertString(defaultExpected, 'args[1] as defaultExpected', 'string');
 
-	return _AssertionChecker(validate, defaultExpected);
+  return _AssertionChecker(validate, defaultExpected);
 }

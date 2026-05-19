@@ -1,1 +1,1 @@
-import './main.spec.mjs';
+import './main.test.mjs';

@@ -5,18 +5,18 @@ import { defineConfig } from 'eslint/config';
 import * as ProduckEslint from '@produck/eslint-rules';
 
 export default defineConfig([
-	{
-		files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
-		plugins: { js },
-		extends: ['js/recommended'],
-		languageOptions: { globals: { ...globals.browser, ...globals.node } },
-	},
-	tseslint.configs.recommended,
-	ProduckEslint.config,
-	ProduckEslint.excludeGitIgnore(import.meta.url),
-	{
-		linterOptions: {
-			noInlineConfig: false,
-		},
-	},
+  {
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+    plugins: { js },
+    extends: ['js/recommended'],
+    languageOptions: { globals: { ...globals.browser, ...globals.node } },
+  },
+  tseslint.configs.recommended,
+  ProduckEslint.config,
+  ProduckEslint.excludeGitIgnore(import.meta.url),
+  {
+    linterOptions: {
+      noInlineConfig: true,
+    },
+  },
 ]);

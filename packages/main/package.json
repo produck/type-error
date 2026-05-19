@@ -1,46 +1,50 @@
 {
-	"name": "@produck/type-error",
-	"version": "0.1.5",
-	"description": "A helper utility to throw type errors using the Produck TypeError template",
-	"keywords": [
-		"type-error",
-		"type-checking",
-		"validation",
-		"error-handling",
-		"produck"
-	],
-	"license": "MIT",
-	"author": "ChaosLee",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/produck/type-error.git",
-		"directory": "packages/main"
-	},
-	"bugs": {
-		"url": "https://github.com/produck/type-error/issues"
-	},
-	"homepage": "https://github.com/produck/type-error#readme",
-	"publishConfig": {
-		"access": "public"
-	},
-	"type": "module",
-	"main": "src/index.mjs",
-	"types": "index.d.ts",
-	"exports": {
-		".": {
-			"types": "./index.d.ts",
-			"import": "./src/index.mjs"
-		}
-	},
-	"files": [
-		"src",
-		"index.d.ts"
-	],
-	"scripts": {
-		"test": "node ./test/index.mjs",
-		"test:only": "node --test-only ./test/index.mjs"
-	},
-	"dependencies": {
-		"@produck/ow": "^0.2.3"
-	}
+  "name": "@produck/type-error",
+  "version": "0.1.5",
+  "description": "A helper utility to throw type errors using the Produck TypeError template",
+  "keywords": [
+    "type-error",
+    "type-checking",
+    "validation",
+    "error-handling",
+    "produck"
+  ],
+  "license": "MIT",
+  "author": "ChaosLee",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/produck/type-error.git",
+    "directory": "packages/main"
+  },
+  "bugs": {
+    "url": "https://github.com/produck/type-error/issues"
+  },
+  "homepage": "https://github.com/produck/type-error#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "src/index.mjs",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./src/index.mjs"
+    }
+  },
+  "files": [
+    "src",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "test": "node ./test/index.mjs",
+    "test:only": "node --test-only ./test/index.mjs",
+    "produck:coverage": "c8 --reporter=lcov --reporter=html --reporter=text-summary npm test"
+  },
+  "dependencies": {
+    "@produck/ow": "^0.2.3"
+  },
+  "devDependencies": {
+    "c8": "11.0.0"
+  }
 }

@@ -27,9 +27,9 @@ Generates a formatted error message for type validation failures.
 **Example:**
 
 ```javascript
-import { ErrorMessage } from "@produck/type-error";
+import { ErrorMessage } from '@produck/type-error';
 
-const message = ErrorMessage("args[0]", "string");
+const message = ErrorMessage('args[0]', 'string');
 // Returns: Invalid "args[0]", one "string" expected.
 ```
 
@@ -47,12 +47,12 @@ Throws a TypeError with a formatted message.
 **Example:**
 
 ```javascript
-import { ThrowTypeError } from "@produck/type-error";
+import { ThrowTypeError } from '@produck/type-error';
 
 function myFunction(value) {
-	if (typeof value !== "string") {
-		ThrowTypeError("args[0]", "string");
-	}
+  if (typeof value !== 'string') {
+    ThrowTypeError('args[0]', 'string');
+  }
 }
 ```
 
@@ -73,27 +73,27 @@ a string
 **Example:**
 
 ```javascript
-import { AssertionChecker } from "@produck/type-error";
+import { AssertionChecker } from '@produck/type-error';
 
 const assertString = AssertionChecker(
-	(value) => typeof value === "string",
-	"string",
+  (value) => typeof value === 'string',
+  'string',
 );
 
 // Use the assertion
 try {
-	assertString(42, "args[0]");
+  assertString(42, 'args[0]');
 } catch (error) {
-	console.error(error.message);
-	// TypeError: Invalid "args[0]", one "string" expected.
+  console.error(error.message);
+  // TypeError: Invalid "args[0]", one "string" expected.
 }
 
 // With custom expected message
 try {
-	assertString(null, "args[0]", "non-null string");
+  assertString(null, 'args[0]', 'non-null string');
 } catch (error) {
-	console.error(error.message);
-	// TypeError: Invalid "args[0]", one "non-null string" expected.
+  console.error(error.message);
+  // TypeError: Invalid "args[0]", one "non-null string" expected.
 }
 ```
 
@@ -102,31 +102,31 @@ try {
 ### Basic Validation
 
 ```javascript
-import { ThrowTypeError } from "@produck/type-error";
+import { ThrowTypeError } from '@produck/type-error';
 
 function processData(data) {
-	if (typeof data !== "object" || data === null) {
-		ThrowTypeError("args[0]", "object");
-	}
-	// ...
+  if (typeof data !== 'object' || data === null) {
+    ThrowTypeError('args[0]', 'object');
+  }
+  // ...
 }
 ```
 
 ### Creating Custom Validators
 
 ```javascript
-import { AssertionChecker } from "@produck/type-error";
+import { AssertionChecker } from '@produck/type-error';
 
-const assertNumber = AssertionChecker((v) => typeof v === "number", "number");
+const assertNumber = AssertionChecker((v) => typeof v === 'number', 'number');
 
-const assertArray = AssertionChecker((v) => Array.isArray(v), "array");
+const assertArray = AssertionChecker((v) => Array.isArray(v), 'array');
 
 function calculateSum(numbers) {
-	assertArray(numbers, "args[0]");
-	return numbers.reduce((sum, n) => {
-		assertNumber(n, "array element");
-		return sum + n;
-	});
+  assertArray(numbers, 'args[0]');
+  return numbers.reduce((sum, n) => {
+    assertNumber(n, 'array element');
+    return sum + n;
+  });
 }
 ```
 
