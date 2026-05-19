@@ -1,6 +1,6 @@
 {
   "name": "@produck/type-error",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A helper utility to throw type errors using the Produck TypeError template",
   "keywords": [
     "type-error",
