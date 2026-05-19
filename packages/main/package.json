@@ -42,9 +42,6 @@
     "produck:coverage": "c8 --reporter=lcov --reporter=html --reporter=text-summary npm test"
   },
   "dependencies": {
-    "@produck/ow": "^0.2.3"
-  },
-  "devDependencies": {
-    "c8": "11.0.0"
+    "@produck/ow": "^0.2.5"
   }
 }
