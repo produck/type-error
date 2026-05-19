@@ -27,7 +27,7 @@ npm run lint
 
 ### Project Structure
 
-```
+```text
 packages/main/
   ├── src/
   │   └── index.mjs          # Main entry point
