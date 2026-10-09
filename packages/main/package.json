@@ -7,9 +7,6 @@
     "@produck/ow": "^0.2.5"
   },
   "description": "A helper utility to throw type errors using the Produck TypeError template",
-  "devDependencies": {
-    "c8": "11.0.0"
-  },
   "exports": {
     ".": {
       "import": "./src/index.mjs",
