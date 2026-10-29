@@ -3,10 +3,10 @@
   "bugs": {
     "url": "https://github.com/produck/type-error/issues"
   },
-  "dependencies": {
-    "@produck/ow": "^0.2.5"
-  },
   "description": "A helper utility to throw type errors using the Produck TypeError template",
+  "devDependencies": {
+    "@produck/ow": "^0.2.0"
+  },
   "exports": {
     ".": {
       "import": "./src/index.mjs",
@@ -28,6 +28,9 @@
   "license": "MIT",
   "main": "src/index.mjs",
   "name": "@produck/type-error",
+  "peerDependencies": {
+    "@produck/ow": "^0.2.0"
+  },
   "publishConfig": {
     "access": "public"
   },
