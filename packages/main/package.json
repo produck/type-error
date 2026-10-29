@@ -10,12 +10,11 @@
   "exports": {
     ".": {
       "import": "./src/index.mjs",
-      "types": "./index.d.ts"
+      "types": "./src/index.d.mts"
     }
   },
   "files": [
-    "src",
-    "index.d.ts"
+    "src"
   ],
   "homepage": "https://github.com/produck/type-error#readme",
   "keywords": [
@@ -45,6 +44,6 @@
     "test:only": "node --test-only ./test/index.mjs"
   },
   "type": "module",
-  "types": "index.d.ts",
+  "types": "./src/index.d.mts",
   "version": "0.2.0"
 }

@@ -30,11 +30,11 @@ npm run lint
 ```text
 packages/main/
   ├── src/
-  │   └── index.mjs          # Main entry point
+  │   ├── index.mjs          # Main entry point
+  │   └── index.d.mts        # TypeScript type definitions
   ├── test/
   │   ├── index.mjs          # Test runner
   │   └── main.spec.mjs      # Test suite
-  ├── index.d.ts             # TypeScript type definitions
   └── package.json
 ```
 
